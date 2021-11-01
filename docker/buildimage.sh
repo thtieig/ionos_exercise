@@ -12,7 +12,7 @@ read voidvar
 
 
 # Create image
-#docker build -t  $IMAGENAME .
+docker build -t  $IMAGENAME .
 
 echo "To push to DockerHub, you need to run manually the following commands:
 
