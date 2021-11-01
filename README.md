@@ -1,6 +1,6 @@
 # IONOS Exercise #
 
-I have been asked to do the following:
+I have been asked to do the following:  
 - Create an account
 - create a Kubernetes Cluster with 2 nodes
 - publish an nginx image with 3 replicas
