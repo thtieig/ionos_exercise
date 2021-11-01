@@ -1,0 +1,4 @@
+Terraform 
+https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest
+https://github.com/ionos-cloud/terraform-provider-ionoscloud
+
