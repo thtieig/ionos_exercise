@@ -48,7 +48,7 @@ resource "ionoscloud_k8s_node_pool" "chris_tf_node_pool" {
     time            = "04:30:00Z"
   }
   datacenter_id     = ionoscloud_datacenter.demo-dc.id
-  k8s_cluster_id    = ionoscloud_k8s_cluster.chris_terraform_k8scluster.idd
+  k8s_cluster_id    = ionoscloud_k8s_cluster.chris_terraform_k8scluster.id
   cpu_family        = "INTEL_SKYLAKE"
   availability_zone = "AUTO"
   storage_type      = "HDD"
