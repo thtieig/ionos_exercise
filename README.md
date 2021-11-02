@@ -26,6 +26,7 @@ I have been asked to do the following:
 #### Web references
 [https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs](https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs)  
 [https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs/resources/k8s_node_pool](https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs/resources/k8s_node_pool)  
+[https://learn.hashicorp.com/tutorials/terraform/dependencies](https://learn.hashicorp.com/tutorials/terraform/dependencies)  
 [https://github.com/ionos-cloud/terraform-provider-ionoscloud](https://github.com/ionos-cloud/terraform-provider-ionoscloud)  
 [https://docs.ionos.com/dcd/managed-kubernetes/download-kubeconfig-file](https://docs.ionos.com/dcd/managed-kubernetes/download-kubeconfig-file)  
 
