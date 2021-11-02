@@ -39,21 +39,21 @@ resource "ionoscloud_k8s_cluster" "chris_terraform_k8scluster" {
   }
 }
 
-# # K8S Pool setup
-# resource "ionoscloud_k8s_node_pool" "chris_tf_node_pool" {
-#   name        = "chris_tf_node_pool"
-#   k8s_version = "1.21.5.4"
-#   maintenance_window {
-#     day_of_the_week = "Sunday"
-#     time            = "04:30:00Z"
-#   }
-#   datacenter_id     = "${var.dcid}"
-#   k8s_cluster_id    = "4a2b6619-47ef-43f5-85fb-b4ce14ee998d"
-#   cpu_family        = "INTEL_SKYLAKE"
-#   availability_zone = "AUTO"
-#   storage_type      = "HDD"
-#   node_count        = 2
-#   cores_count       = 1
-#   ram_size          = 2048
-#   storage_size      = 10
-# }
+# K8S Pool setup
+resource "ionoscloud_k8s_node_pool" "chris_tf_node_pool" {
+  name        = "chris_tf_node_pool"
+  k8s_version = "1.21.5.4"
+  maintenance_window {
+    day_of_the_week = "Sunday"
+    time            = "04:30:00Z"
+  }
+  datacenter_id     = ionoscloud_datacenter.demo-dc.id
+  k8s_cluster_id    = ionoscloud_k8s_cluster.chris_terraform_k8scluster.idd
+  cpu_family        = "INTEL_SKYLAKE"
+  availability_zone = "AUTO"
+  storage_type      = "HDD"
+  node_count        = 2
+  cores_count       = 1
+  ram_size          = 2048
+  storage_size      = 10
+}
