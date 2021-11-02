@@ -2,7 +2,7 @@ terraform {
   required_providers {
     ionoscloud = {
       source = "ionos-cloud/ionoscloud"
-      version = "= 6.0.0-alpha.3"
+      version = "= 6.0.0-beta.14"
     }
   }
 }
@@ -42,7 +42,7 @@ resource "ionoscloud_k8s_cluster" "chris_terraform_k8scluster" {
 # K8S Pool setup
 resource "ionoscloud_k8s_node_pool" "chris_tf_node_pool" {
   name        = "chris_tf_node_pool"
-  k8s_version = "1.21.5.4"
+  k8s_version = "1.21.4"
   maintenance_window {
     day_of_the_week = "Sunday"
     time            = "04:30:00Z"
