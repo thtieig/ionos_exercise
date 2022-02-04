@@ -28,7 +28,7 @@
 - docker
 
 > _The current exercise has been completed on Ubuntu 20.04.3 LTS using:_  
-> - _Terraform v1.1.15 with registry.terraform.io/ionos-cloud/ionoscloud v6.1.3 
+> - _Terraform v1.1.15 with registry.terraform.io/ionos-cloud/ionoscloud v6.1.3_ 
 > - _Kubectl v1.22.5_  
 > - _Docker version 20.10.10, build b485636_  
 
