@@ -54,3 +54,6 @@ Thumbs.db
 *.tfstate
 *.tfvars
 *.backup
+
+# K8S
+kubeconfig.json*
