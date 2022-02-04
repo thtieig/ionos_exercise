@@ -10,5 +10,5 @@ variable "ionoscloud_password" {
 
 variable "ionoscloud_datacenter_location" {
   type = string
-  description = "IONOS The regional location for this IP Block: us/las, us/ewr, de/fra, de/fkb"
+  description = "IONOS regional location for VDC: gb/lhr, us/las, us/ewr, de/fra, de/fkb"
 }
