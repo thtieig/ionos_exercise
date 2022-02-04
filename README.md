@@ -1,17 +1,16 @@
-# IONOS Exercise #
+# IONOS K8S Demo #
 
-I have been asked to do the following:  
-- Create an account  
-- create a Kubernetes Cluster with 2 nodes  
-- publish an nginx image with 3 replicas  
-- optional to serve a personalised static index page  
-- bonus if you can produce a repeatable terraform template  
+- Create a IONOS Cloud account  
+- Create a Kubernetes Cluster with 2 nodes  
+- Publish an nginx image with 3 replicas  
+- Serve a personalised static index page  
+- Produce a repeatable terraform template  
 
 ## Steps
 
-1. Create an IONOS account - manual operation
+1. Create an IONOS account - manual operation. I have opened a new account on the IONOS UK website [here](https://cloud.ionos.co.uk/compute/signup)
 2. Create custom Docker Nginx container, using `buildimage.sh` in `docker` folder, and following the instructions
-3. Configure `k8scluster.auto.tfvars` (in k8s directory `mv k8scluster.auto.tfvars.example k8scluster.auto.tfvars`)
+3. Configure `k8scluster.auto.tfvars` (in k8s directory `mv k8scluster.auto.tfvars.example k8scluster.auto.tfvars`) - [Here](https://api.ionos.com/docs/cloud/v6/#locationsget-8llkg) you can find the API call to get the list of all datacenter available in your account.
 4. Go into `k8s` directory and run `terraform init`, `terraform plan` and `terraform apply`
 5. Once the infrastructure is completed, download the json file from the panel as described [here](https://docs.ionos.com/dcd/managed-kubernetes/download-kubeconfig-file), then use `kubectl --kubeconfig kubeconfig.json <command>` to access your k8s cluster
 6. To deploy your custom nginx container run: `kubectl --kubeconfig kubeconfig.json apply -f deploy_web.yaml`
@@ -28,14 +27,15 @@ I have been asked to do the following:
 - kubectl
 - docker
 
-> _The current exercise has been completed on Ubuntu 20.04.03 LTS using:_  
-> - _Terraform v1.0.10 with registry.terraform.io/ionos-cloud/ionoscloud v6.0.0-beta.14_  
-> - _Kubectl v1.22.3_  
+> _The current exercise has been completed on Ubuntu 20.04.3 LTS using:_  
+> - _Terraform v1.1.15 with registry.terraform.io/ionos-cloud/ionoscloud v6.1.3 
+> - _Kubectl v1.22.5_  
 > - _Docker version 20.10.10, build b485636_  
 
 
 
 #### Web references
+[https://api.ionos.com/docs/cloud/v6/#locationsget-8llkg](https://api.ionos.com/docs/cloud/v6/#locationsget-8llkg)
 [https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs](https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs)  
 [https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs/resources/k8s_node_pool](https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs/resources/k8s_node_pool)  
 [https://learn.hashicorp.com/tutorials/terraform/dependencies](https://learn.hashicorp.com/tutorials/terraform/dependencies)  

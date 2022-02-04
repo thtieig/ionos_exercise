@@ -2,7 +2,7 @@ terraform {
   required_providers {
     ionoscloud = {
       source = "ionos-cloud/ionoscloud"
-      version = "= 6.0.0-beta.14"
+      version = "= 6.1.3"
     }
   }
 }
@@ -16,9 +16,9 @@ provider "ionoscloud" {
 
 # Datacenter creation
 resource "ionoscloud_datacenter" "demo-dc" {
-  name        = "demo-dc"
+  name        = "Demo Datacentre"
   location    = "${var.ionoscloud_datacenter_location}"
-  description = "Datacenter for testing purposes"
+  description = "VDC managed by Terraform"
 }
 
 
@@ -30,8 +30,8 @@ resource "ionoscloud_ipblock" "reserved_ip" {
 }
 
 # K8S Cluster definition
-resource "ionoscloud_k8s_cluster" "chris_terraform_k8scluster" {
-  name        = "chris_terraform_k8scluster"
+resource "ionoscloud_k8s_cluster" "k8scluster_ControlPlane" {
+  name        = "k8scluster_ControlPlane"
   k8s_version = "1.21.4"
   maintenance_window {
     day_of_the_week = "Sunday"
@@ -40,15 +40,15 @@ resource "ionoscloud_k8s_cluster" "chris_terraform_k8scluster" {
 }
 
 # K8S Pool setup
-resource "ionoscloud_k8s_node_pool" "chris_tf_node_pool" {
-  name        = "chris_tf_node_pool"
+resource "ionoscloud_k8s_node_pool" "k8scluster_NodePool" {
+  name        = "k8scluster_NodePool"
   k8s_version = "1.21.4"
   maintenance_window {
     day_of_the_week = "Sunday"
     time            = "04:30:00Z"
   }
   datacenter_id     = ionoscloud_datacenter.demo-dc.id
-  k8s_cluster_id    = ionoscloud_k8s_cluster.chris_terraform_k8scluster.id
+  k8s_cluster_id    = ionoscloud_k8s_cluster.k8scluster_ControlPlane.id
   cpu_family        = "INTEL_SKYLAKE"
   availability_zone = "AUTO"
   storage_type      = "HDD"
