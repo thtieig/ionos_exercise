@@ -13,20 +13,11 @@ provider "ionoscloud" {
   password = "${var.ionoscloud_password}"
 }
 
-
 # Datacenter creation
 resource "ionoscloud_datacenter" "demo-dc" {
   name        = "Demo Datacentre"
   location    = "${var.ionoscloud_datacenter_location}"
   description = "VDC managed by Terraform"
-}
-
-
-# Reserve IP
-resource "ionoscloud_ipblock" "reserved_ip" {
-  name = "reserved_ip"
-  location = "${var.ionoscloud_datacenter_location}"
-  size     = 1
 }
 
 # K8S Cluster definition
